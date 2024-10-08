@@ -1,20 +1,74 @@
-﻿// Lift.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include <vector>
+#include <string>
+//Задание 2024.10.08.01
 
-#include <iostream>
+//Создать класс Лифт, который принимает на вход нижний и верхний этаж. Геттеры, //сеттеры и конструкторы.//
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+class CLift {
+public:
+    int floor_min;
+    int floor_max;
+    int cur_floor;
+    int next_floor;
+    void Floor_min(int value) { floor_min = value; }
+    void Floor_max(int value) { floor_max = value; }
+    int Floor_min() { return floor_min; }
+    int Floor_max() { return floor_max; }
+    string GetString() {
+        return "Floor_min: " + to_string(floor_min) + " and " + "Floor_max: " + to_string(floor_max) + "\n";
+    }
+    void print() { cout << GetString(); }
+    void Up(int cur_floor, int next_floor) {
+        while (cur_floor != next_floor)
+        {
+            cout << cur_floor << "\n";
+            cur_floor++;
+        }
+        cout << "\n";
+        cout << "You in the " << cur_floor << "\n";
+        cout << "\n";
+    }
+    void Down(int next_floor, int cur_floor) {
+        while (next_floor = cur_floor)
+        {
+            cout << cur_floor << "\n";
+            cur_floor--;
+        }
+        cout << "\n";
+        cout << "You in the " << next_floor << "\n";
+        cout << "\n";
+    }
+    CLift(int lower, int upper) : floor_min(lower), floor_max(upper) {};
+    ~CLift() {};
+
+private:
+};
+
+int main() {
+    CLift lift = CLift(1, 9);
+    while (true)
+    {
+        cout << "What is your current floor:\n";
+        cin >> lift.cur_floor;
+        cout << "What is your next floor:\n";
+        cin >> lift.next_floor;
+        cout << "\n";
+        if (lift.next_floor > lift.cur_floor) {
+            lift.Up(lift.cur_floor, lift.next_floor);
+        }
+        else if(lift.cur_floor > lift.next_floor) {
+            lift.Down(lift.next_floor, lift.cur_floor);
+        }
+        /*for (int i = 1; i < lift.next_floor+1; i++)
+        {
+            cout << i << "\n";
+        }
+        cout << "\n";
+        cout << "You in the " << lift.next_floor << "\n";
+        cout << "\n";*/
+    }
+    lift.print();
+
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
