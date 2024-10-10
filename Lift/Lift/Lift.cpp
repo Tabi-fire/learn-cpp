@@ -23,15 +23,18 @@ public:
     void Up(int cur_floor, int next_floor) {
         while (cur_floor != next_floor)
         {
+
             cout << cur_floor << "\n";
             cur_floor++;
+
         }
+        cout << cur_floor << "\n";
         cout << "\n";
         cout << "You in the " << cur_floor << "\n";
         cout << "\n";
     }
     void Down(int next_floor, int cur_floor) {
-        while (next_floor = cur_floor)
+        while (next_floor <= cur_floor)
         {
             cout << cur_floor << "\n";
             cur_floor--;
