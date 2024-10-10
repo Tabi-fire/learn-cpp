@@ -7,30 +7,36 @@
 using namespace std;
 
 class CLift {
-public:
+private:
     int floor_min;
     int floor_max;
     int cur_floor;
     int next_floor;
-    void Floor_min(int value) { floor_min = value; }
-    void Floor_max(int value) { floor_max = value; }
+
+
+
+public:
+    void SetCurFloor(int value) { cur_floor = value; }
+    void SetNextFloor(int value) { next_floor = value; }
+    int GetCurFloor() { return cur_floor; }
+    int GetNextFloor() { return next_floor; }
     int Floor_min() { return floor_min; }
     int Floor_max() { return floor_max; }
     string GetString() {
         return "Floor_min: " + to_string(floor_min) + " and " + "Floor_max: " + to_string(floor_max) + "\n";
     }
     void print() { cout << GetString(); }
-    void Up(int cur_floor, int next_floor) {
-        while (cur_floor != next_floor)
+    void Up(int SetFloor_min, int SetFloor_max) {
+        while (SetFloor_min != SetFloor_max)
         {
 
-            cout << cur_floor << "\n";
-            cur_floor++;
+            cout << SetFloor_min << "\n";
+            SetFloor_min++;
 
         }
-        cout << cur_floor << "\n";
+        cout << SetFloor_min << "\n";
         cout << "\n";
-        cout << "You in the " << cur_floor << "\n";
+        cout << "You in the " << SetFloor_min << "\n";
         cout << "\n";
     }
     void Down(int next_floor, int cur_floor) {
@@ -43,26 +49,34 @@ public:
         cout << "You in the " << next_floor << "\n";
         cout << "\n";
     }
+
     CLift(int lower, int upper) : floor_min(lower), floor_max(upper) {};
     ~CLift() {};
 
-private:
 };
 
 int main() {
+    int sum_Cur_Floor;
+    int sum_Next_floor;
+    string quit;
     CLift lift = CLift(1, 9);
     while (true)
     {
         cout << "What is your current floor:\n";
-        cin >> lift.cur_floor;
+        cin >> sum_Cur_Floor;
+        lift.SetCurFloor(sum_Cur_Floor);
         cout << "What is your next floor:\n";
-        cin >> lift.next_floor;
+        cin >> sum_Next_floor;
+        lift.SetNextFloor(sum_Next_floor);
         cout << "\n";
-        if (lift.next_floor > lift.cur_floor) {
-            lift.Up(lift.cur_floor, lift.next_floor);
+        if (lift.GetNextFloor() > lift.GetCurFloor()) {
+            lift.Up(lift.GetCurFloor(), lift.GetNextFloor());
         }
-        else if(lift.cur_floor > lift.next_floor) {
-            lift.Down(lift.next_floor, lift.cur_floor);
+        else if(lift.GetCurFloor() > lift.GetNextFloor()) {
+            lift.Down(lift.GetNextFloor(), lift.GetCurFloor());
+        }
+        else if (quit == "q") {
+            break;
         }
         /*for (int i = 1; i < lift.next_floor+1; i++)
         {
@@ -72,6 +86,6 @@ int main() {
         cout << "You in the " << lift.next_floor << "\n";
         cout << "\n";*/
     }
-    lift.print();
+    //lift.print();
 
 }
