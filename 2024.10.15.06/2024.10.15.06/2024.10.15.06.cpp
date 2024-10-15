@@ -44,8 +44,13 @@ int main()
 {
     srand(time(0));
     Pizza pz = Pizza(rand() % 10, rand() % 3, rand() % 5,0,0,0);
-    cout << "Cheese: " << pz.GetAmountOfCheese() << endl;
-    cout << "Width dow: " << pz.GetWidthOfDow() << endl;
-    cout << "Tomato souse: " << pz.GetAmountOfTomatoSouce() << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "Cheese: " << pz.GetAmountOfCheese() << endl;
+        cout << "Width dow: " << pz.GetWidthOfDow() << endl;
+        cout << "Tomato souse: " << pz.GetAmountOfTomatoSouce() << endl;
+        cout << endl;
+    }
+
 
 }
