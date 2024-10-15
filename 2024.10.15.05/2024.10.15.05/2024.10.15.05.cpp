@@ -23,21 +23,16 @@ public:
     int GetBakeWithCrunch() { return mBakeWithCrunch; };
     void SetAmountOfSlices(int amountOfSlices) { mAmountOfSlices = amountOfSlices; };
     int GetAmountOfSlices() { return mAmountOfSlices; };
-    Pizza();
+    Pizza(int mAmountOfCheese, int mWidthOfDow, int mAmountOfTomatoSouce, int mUsePinaples, int mBakeWithCrunch, int mAmountOfSlices);
     ~Pizza();
 
 private:
 
 };
 
-Pizza::Pizza()
+Pizza::Pizza(int mAmountOfCheese, int mWidthOfDow, int mAmountOfTomatoSouce, int mUsePinaples, int mBakeWithCrunch, int mAmountOfSlices) : mAmountOfCheese();
 {
-    mAmountOfCheese;
-    mWidthOfDow;
-    mAmountOfTomatoSouce;
-    mUsePinaples;
-    mBakeWithCrunch;
-    mAmountOfSlices;
+
 }
 
 Pizza::~Pizza()
