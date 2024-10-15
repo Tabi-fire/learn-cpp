@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿ #include <iostream>
 #include <vector>
 #include <string>
 //Задание 2024.10.08.01
@@ -75,9 +75,9 @@ int main() {
         else if(lift.GetCurFloor() > lift.GetNextFloor()) {
             lift.Down(lift.GetNextFloor(), lift.GetCurFloor());
         }
-        else if (quit == "q") {
+        /*else if (quit == "q") {
             break;
-        }
+        }*/
         /*for (int i = 1; i < lift.next_floor+1; i++)
         {
             cout << i << "\n";
