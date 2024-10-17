@@ -40,10 +40,17 @@ Pizza::~Pizza()
 {
 }
 
+void Print() {
+    cout << "Cheese: " << pz.GetAmountOfCheese() << endl;
+    cout << "Width dow: " << pz.GetWidthOfDow() << endl;
+    cout << "Tomato souse: " << pz.GetAmountOfTomatoSouce() << endl;
+    cout << endl;
+}
+
 int main()
 {
     srand(time(0));
-    Pizza pz = Pizza(rand() % 10, rand() % 3, rand() % 5,0,0,0);
+    Pizza pz = Pizza(rand() % 11, rand() % 4, rand() % 6,0,0,0);
     for (int i = 0; i < 5; i++)
     {
         cout << "Cheese: " << pz.GetAmountOfCheese() << endl;
