@@ -1,14 +1,14 @@
-﻿#include <iostream>
+﻿#include <iostream> // Добавление библиотеки iostream
 
-using namespace std;
+using namespace std; // Добавление языкового имени std;
 
-class Number
+class Number // Создаем Класс
 {
-	int mNumber = 10;
-public:
-	void SetNumb(int mValue) { mNumber = mValue; }
-	int GetNumb() { return mNumber; }
-	void Print();
+	int mNumber = 10; // Объявляем переменную в привате и передаем значение 10
+public: // в публике
+	void SetNumb(int mValue) { mNumber = mValue; } // создаем Сеттер для mNumber
+	int GetNumb() { return mNumber; } // создаем Геттер для mNumber
+	void Print();// создаем функцию для вывода числа
 	Number();
 	~Number();
 
@@ -23,17 +23,17 @@ Number::Number()
 Number::~Number()
 {
 }
-void Number::Print() {
-	cout << mNumber;
+void Number::Print() { // Объявляем функцию Print для класса Number
+	cout << mNumber; // Выводим в консоль
 }
-void Print(Number n) {
-	n.Print();
+void Print(Number n) { // Объявляем Print как пустоту и закидываем туда новую переменную для класса Number n
+	n.Print(); // Выводим
 }
 
-int main()
+int main() // Создаем функию main
 {
-	Number nb = Number();
-	Print(nb);
+	Number nb = Number(); // Объявляем класс Number в функции main
+	Print(nb); // Выводим число с помощью функции Print
 
 
 }
