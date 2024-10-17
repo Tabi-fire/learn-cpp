@@ -1,15 +1,17 @@
 ﻿#include <iostream> // Добавление библиотеки iostream
+#include <string>
 
 using namespace std; // Добавление языкового имени std;
 
 class Number // Создаем Класс
 {
-	int mNumber = 10; // Объявляем переменную в привате и передаем значение 10
+	int mNumber; // Объявляем переменную в привате и передаем значение 10
 public: // в публике
 	void SetNumb(int mValue) { mNumber = mValue; } // создаем Сеттер для mNumber
 	int GetNumb() { return mNumber; } // создаем Геттер для mNumber
 	void Print();// создаем функцию для вывода числа
-	Number(); // Добавляем конструктор Number
+	Number() : mNumber(0) {}; // Добавляем конструктор Number
+	Number(int value) : mNumber(value) {}
 	~Number(); // Добавляем диструктор ~Number
 
 private: // Создаем приватную структуру
@@ -32,8 +34,10 @@ void Print(Number n) { // Объявляем Print как пустоту и за
 
 int main() // Создаем функию main
 {
-	Number nb = Number(); // Объявляем класс Number в функции main
+	Number nb = Number(); // Объявляем класс Number в функции main;
 	Print(nb); // Выводим число с помощью функции Print
+	int IntNum = 10;
+	Print(IntNum);
 
 
 }
