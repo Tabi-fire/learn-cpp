@@ -4,11 +4,11 @@ using namespace std;
 
 class Number
 {
-	int mNumber = 0;
+	int mNumber = 10;
 public:
-	void SetNumb(int number) { mNumber = number; }
+	void SetNumb(int mValue) { mNumber = mValue; }
 	int GetNumb() { return mNumber; }
-	int Print();
+	void Print();
 	Number();
 	~Number();
 
@@ -23,15 +23,17 @@ Number::Number()
 Number::~Number()
 {
 }
-int Number::Print() {
-	Number nb = Number();
-	nb.SetNumb(10);
-	return nb.GetNumb();
+void Number::Print() {
+	cout << mNumber;
+}
+void Print(Number n) {
+	n.Print();
 }
 
 int main()
 {
 	Number nb = Number();
-	cout << nb.Print();
+	Print(nb);
+
 
 }
