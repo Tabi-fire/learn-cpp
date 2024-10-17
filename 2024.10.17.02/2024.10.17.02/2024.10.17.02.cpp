@@ -9,18 +9,18 @@ public: // в публике
 	void SetNumb(int mValue) { mNumber = mValue; } // создаем Сеттер для mNumber
 	int GetNumb() { return mNumber; } // создаем Геттер для mNumber
 	void Print();// создаем функцию для вывода числа
-	Number();
-	~Number();
+	Number(); // Добавляем конструктор Number
+	~Number(); // Добавляем диструктор ~Number
 
-private:
+private: // Создаем приватную структуру
 
 };
 
-Number::Number()
+Number::Number() // Добавляем конструктор Number::Number для инициализации переменных и их появления
 {
 }
 
-Number::~Number()
+Number::~Number() // Добавляем диструктор Number::~Number для удаления переменных, чтобы освободить память
 {
 }
 void Number::Print() { // Объявляем функцию Print для класса Number
