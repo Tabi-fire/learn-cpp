@@ -9,7 +9,7 @@ class Animal
 public:
 	Animal() {};
 	Animal(string w) :word(w) {};
-	void Say(Animal n) { cout << word; }
+	void Say() { cout << word; }
 
 private:
 
@@ -51,7 +51,7 @@ private:
 
 };
 void Say(Animal& n) {
-	n.Say(n);
+	n.Say();
 }
 
 int main()
