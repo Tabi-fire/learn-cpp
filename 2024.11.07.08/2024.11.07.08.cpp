@@ -60,11 +60,11 @@ int main()
 	string name;
 	Animal animal = Animal();
 	Crow crow = Crow();
-	Crow* crowSay = &Crow();
+	Crow crowSay = Crow();
 	Dog dog = Dog();
-	Dog* dogSay = new Dog();
+	Dog dogSay = Dog();
 	Cat cat = Cat();
-	Cat* catSay = new Cat();
+	Cat catSay = Cat();
 	cout << "Кличка Ворона: ";
 	cin >> name;
 	crow.SetNameCrow(name);
@@ -79,13 +79,13 @@ int main()
 	cout << endl;
 
 	cout << crow.GetNameCrow() << " сказал: ";
-	Say(crowSay);
+	Say(&crowSay);
 	cout << endl;
 
 	cout << dog.GetNameDog() << " сказала: ";
-	Say(dogSay);
+	Say(&dogSay);
 	cout << endl;
 
 	cout << cat.GetNameCat() << " сказала: ";
-	Say(catSay);
+	Say(&catSay);
 }
