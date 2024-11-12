@@ -47,7 +47,7 @@ private:
 
 };
 
-class CreditCard : public BankAccount
+class CreditCard : public DebitCard
 {
 	int mCardNum;
 	int mCardDuteDate;
