@@ -29,20 +29,26 @@ private:
 class DebitCard
 {
 	int mAccountNum;
-	string mCardName;
+	int mCardNum;
+	int mCardLastDate;
+	int mCardCVV;
 	string mBankName;
 	string mAccountName;
 	int mBalance;
 public:
 	void SetAccountNum(int accountNum) { mAccountNum = accountNum; }
 	int GetAccountNum() { return mAccountNum; }
-	void SetCardName(string cardName) { mBankName = cardName; }
-	string GetCardName() { return mBankName; }
+	void SetCardName(int cardNum) { mCardNum = cardNum; }
+	int GetCardName() { return mCardNum; }
+	void SetCardLastDate(int cardLastDate) { mCardLastDate = cardLastDate; }
+	int GetCardLastDate() { return mCardLastDate; }
+	void SetCardCVV(int cardCVV) { mCardCVV = cardCVV; }
+	int GetCardCVV() { return mCardCVV; }
 	void SetAccountName(string accountName) { mAccountName = accountName; }
 	string GetAccountName() { return  mAccountName; }
 	void SetBalance(int balance) { mBalance = balance; }
 	int GetBalance() { return mBalance; }
-	DebitCard(int accountNum = 0, string cardName = "", string bankName = "", string accountName = "", int balance = 0) : mAccountNum(accountNum), mCardName(cardName), mBankName(bankName), mAccountName(accountName), mBalance(balance) {};
+	DebitCard(int accountNum = 0, int cardName = 0, int cardLastDate = 0, int cardCVV = 0, string bankName = "", string accountName = "", int balance = 0) : mAccountNum(accountNum), mCardName(cardName), mBankName(bankName), mAccountName(accountName), mBalance(balance) {};
 	~DebitCard() {};
 
 private:
