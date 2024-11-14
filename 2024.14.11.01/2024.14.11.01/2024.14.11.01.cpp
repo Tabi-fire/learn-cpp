@@ -19,6 +19,7 @@ public:
 void Say(Animal* animal) { 
 	// перечислите методы, доступные объекту animal
 	// объект animal имеет только один метод 'Say()'
+	animal->Say();
 
 }
 
