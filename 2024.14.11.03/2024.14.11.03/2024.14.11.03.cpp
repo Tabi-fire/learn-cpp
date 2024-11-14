@@ -4,7 +4,7 @@ using namespace std;
 
 class String
 {
-	string mName;
+	const char* mName;
 public:
 	void SetName(string name) { mName = name; }
 	string GetName() { return mName; }
