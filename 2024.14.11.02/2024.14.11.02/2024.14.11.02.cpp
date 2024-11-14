@@ -10,8 +10,8 @@ protected:
 public:
 	void SetHomeAnimals(string name) { mName = name; }
 	string GetHomeAnimals() { return mName; }
-	void Say(string name) {
-		cout << name << endl;
+	void Say() {
+		cout << mName << endl;
 	}
 	HomeAnimals(string name = "") : mName(name) {};
 	~HomeAnimals() {};
@@ -57,7 +57,7 @@ int main()
 	Dog dog = Dog("Dog");
 	Cat cat = Cat("Cat");
 	Parrot parrot = Parrot("Parrot");
-	dog.Say("Dog");
-	cat.Say("Cat");
-	parrot.Say("Parrot");
+	dog.Say();
+	cat.Say();
+	parrot.Say();
 }
